@@ -1,5 +1,8 @@
 // OS Homework 1 - Round Robin Scheduling
 // TODO
+
+
+//          DEADLINE : 25TH MARCH 2026
 /*  
     Group 8: 
     - Member 1: Mohammed Abdul Haris - U23100877
@@ -16,25 +19,27 @@ using namespace std;
 int main()
 {
 
-    // ----- Member 1 : Input & Validation -----
+    // ----- Member 1 : Input & Validation ----- Hyder
 
 
 
 
-    // ----- Member 2 : Round Robin Logic -----
+    // ----- Member 2 : Round Robin Logic -----  Mohammed Haris
 
 
 
 
-    // ----- Member 3 : Waiting Time Calculation -----
+    // ----- Member 3 : Waiting Time Calculation -----  Azhar
 
-    
 
-    // ----- Member 4 : Turnaround Time & Averages -----
 
-    
 
-    // ----- Member 5 : Output Formatting -----
+    // ----- Member 4 : Turnaround Time & Averages -----  Faris
+
+
+
+
+    // ----- Member 5 : Output Formatting -----  Ahmad
 
     return 0;
 }
