@@ -7,7 +7,7 @@
     Group 8: 
     - Member 1: Mohammed Abdul Haris - U23100877
     - Member 2: [Name] - [ID]
-    - Member 3: [Name] - [ID]
+    - Member 3: Muhammad Azhar - U23102421
     - Member 4: [Name] - [ID]
     - Member 5: [Name] - [ID]
 */
