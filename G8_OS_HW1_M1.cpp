@@ -1,6 +1,7 @@
+// ----- Member 1 : Input & Validation ----- Hydyr
 
-void getInput(int burstTime[], int &n, int &quantum) {
- 
+void getInput(int burstTime[], int &n, int &quantum) 
+{ 
     // Get number of processes with validation
     do {
         cout << "Enter number of processes (1-10): ";
