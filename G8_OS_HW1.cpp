@@ -6,7 +6,7 @@
 /*  
     Group 8: 
     - Member 1: Mohammed Abdul Haris - U23100877
-    - Member 2: [Name] - [ID]
+    - Member 2: Hydyr Babamuradov - U22200809
     - Member 3: Muhammad Azhar - U23102421
     - Member 4: [Name] - [ID]
     - Member 5: [Name] - [ID]
@@ -19,7 +19,7 @@ using namespace std;
 int main()
 {
 
-    // ----- Member 1 : Input & Validation ----- Hyder
+    // ----- Member 1 : Input & Validation ----- Hydyr
 
 
 
