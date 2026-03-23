@@ -20,8 +20,8 @@ int main()
 {
 
     // ----- Member 1 : Input & Validation ----- Hydyr
-void getInput(int burstTime[], int &n, int &quantum) {
- 
+void getInput(int burstTime[], int &n, int &quantum) 
+{
     // Get number of processes with validation
     do {
         cout << "Enter number of processes (1-10): ";
@@ -31,7 +31,8 @@ void getInput(int burstTime[], int &n, int &quantum) {
     } while (n < 1 || n > 10);
  
     // Get burst time for each process with validation
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) 
+    {
         do {
             cout << "Enter burst time for process P" << (i + 1) << ": ";
             cin >> burstTime[i];
