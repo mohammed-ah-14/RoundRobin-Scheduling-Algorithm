@@ -132,6 +132,11 @@ int main(){
     */
 
     // ----- Member 3 :  Turnaround Time  -----  Azhar
+    int turnaroundTime[10];
+    for (int i = 0; i < prcs; i++) 
+        {
+            turnaroundTime[i] = completionTime[i] - arrivalTime;
+        }
 
     // ----- Member 4 :  Waiting Time Calculation & Averages -----  Faris
 
