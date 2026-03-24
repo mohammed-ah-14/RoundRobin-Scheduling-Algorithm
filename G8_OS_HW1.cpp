@@ -139,6 +139,19 @@ int main(){
         }
 
     // ----- Member 4 :  Waiting Time Calculation & Averages -----  Faris
+    int waitingTime[10];
+    double totalWaitTime = 0;
+    double totalTurnaroundTime = 0;
+
+        for (int i = 0; i < prcs; i++) 
+        {
+            waitingTime[i] = turnaroundTime[i] - burstTime[i];
+            totalWaitTime += waitingTime[i];
+            totalTurnaroundTime += turnaroundTime[i];
+        }
+
+    double avgWaitTime = totalWaitTime/prcs;
+    double avgTurnaroundTime = totalTurnaroundTime/prcs;
 
     // ----- Member 5 : Output Formatting -----  Ahmad
 
