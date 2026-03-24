@@ -154,6 +154,22 @@ int main(){
     double avgTurnaroundTime = totalTurnaroundTime/prcs;
 
     // ----- Member 5 : Output Formatting -----  Ahmad
+    
+
+    cout << "\n===== Round Robin Scheduling Result =====\n";
+    cout << "\nProcess\tBurst Time\tCompletion Time\tTurnaround Time\tWaiting Time\n";
+
+for (int i = 0; i < prcs; i++)
+{
+    cout << "P" << (i + 1) << "\t"
+         << burstTime[i] << "\t\t"
+         << completionTime[i] << "\t\t"
+         << turnaroundTime[i] << "\t\t"
+         << waitingTime[i] << "\n";
+}
+
+cout << "\nAverage Waiting Time: " << avgWaitTime << endl;
+cout << "Average Turnaround Time: " << avgTurnaroundTime << endl;
 
     return 0;
 }
