@@ -3,12 +3,12 @@
 
 //          DEADLINE : 25TH MARCH 2026
 /*
-    Group 8:
-    - Member 1: Mohammed Abdul Haris - U23100877
-    - Member 2: Hydyr Babamuradov - U22200809
-    - Member 3: Muhammad Azhar - U23102421
-    - Member 4: FARIS MUNADHIL AHMED ALAGHA - U23104246
-    - Member 5: AKHMAD SAMIR MOSSAVI - U23102307
+    GROUP 8:
+    - MEMBER 1: MOHAMMED ABDUL HARIS - U23100877
+    - MEMBER 2: HYDYR BABAMURADOV - U22200809
+    - MEMBER 3: MUHAMMAD AZHAR - U23102421
+    - MEMBER 4: FARIS MUNADHIL AHMED ALAGHA - U23104246
+    - MEMBER 5: AKHMAD SAMIR MOSSAVI - U23102307
 */
 
 #include <iostream>
@@ -19,7 +19,7 @@ int main(){
     // ----- Member 1 : Input & Validation ----- Hydyr
 
     int burstTime[10], prcs, quantum;
-    int arrivalTime = 0; // we are assuming all processes arrive at time 0 for simplicity
+    int arrivalTime = 0; // we are assuming all processes arrive at time 0 as per the assignment instructions
 
 
     do
@@ -55,21 +55,23 @@ int main(){
     } while (quantum <= 0);
 
 
-    // ----- Member 2 : Round Robin Logic -----  Mohammed Haris
+    // ----- Member 2 : Round Robin Logic -----  Mohammed Abdul Haris
 
     int remainingTime[10];  // remaining burst time per process
     int completionTime[10]; // time at which each process completes execution
-    int currentTime = 0;    // current time on the CPU clock
+    int currentTime = 0;    // keeps track of the total elapsed CPU time, used to calculate completion times for each process
     bool done = false;
 
     // Initialize remaining times
     for (int i = 0; i < prcs; i++)
         remainingTime[i] = burstTime[i];
 
-    // Keep cycling through processes until all processes are done
+    // Round Robin Scheduling works by giving each process a fixed time quantum in a cyclic order.
+    // If a process does not finish within the given quantum, it is paused and moved to the back of the queue.
+    // This continues until all processes have completed execution.
     while (!done)
     {
-        done = true; // Assume all processes are done
+        done = true; // this flag will be set to false if we find any process that still has remaining burst time, initially we assume all processes are done
 
         for (int i = 0; i < prcs; i++)
         {
@@ -105,11 +107,13 @@ int main(){
     // ----- Member 4 :  Waiting Time Calculation & Averages -----  Faris
 
     int waitingTime[10];        
+
     double totalWaitTime = 0;
     double totalTurnaroundTime = 0;
 
     for (int i = 0; i < prcs; i++) {
         waitingTime[i] = turnaroundTime[i] - burstTime[i]; // waiting time for each process (time spent waiting in the ready queue, calculated as turnaround time - burst time)
+        
         totalWaitTime += waitingTime[i];
         totalTurnaroundTime += turnaroundTime[i];
     }
