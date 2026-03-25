@@ -1,14 +1,12 @@
 // OS Homework 1 - Round Robin Scheduling
 
-
-//          DEADLINE : 25TH MARCH 2026
 /*
     GROUP 8:
-    - MEMBER 1: MOHAMMED ABDUL HARIS - U23100877
-    - MEMBER 2: HYDYR BABAMURADOV - U22200809
-    - MEMBER 3: MUHAMMAD AZHAR - U23102421
-    - MEMBER 4: FARIS MUNADHIL AHMED ALAGHA - U23104246
-    - MEMBER 5: AKHMAD SAMIR MOSSAVI - U23102307
+    - MEMBER 1
+    - MEMBER 2
+    - MEMBER 3
+    - MEMBER 4
+    - MEMBER 5
 */
 
 #include <iostream>
@@ -16,7 +14,7 @@ using namespace std;
 
 int main(){
 
-    // ----- Member 1 : Input & Validation ----- Hydyr
+    // ----- Member 1 : Input & Validation ----- 
 
     int burstTime[10], prcs, quantum;
     int arrivalTime = 0; // we are assuming all processes arrive at time 0 as per the assignment instructions
@@ -55,7 +53,7 @@ int main(){
     } while (quantum <= 0);
 
 
-    // ----- Member 2 : Round Robin Logic -----  Mohammed Abdul Haris
+    // ----- Member 2 : Round Robin Logic -----  
 
     int remainingTime[10];  // remaining burst time per process
     int completionTime[10]; // time at which each process completes execution
@@ -96,7 +94,7 @@ int main(){
     }
 
 
-    // ----- Member 3 :  Turnaround Time  -----  Azhar
+    // ----- Member 3 :  Turnaround Time  -----
 
     int turnaroundTime[10];     // turnaround time per process (time from arrival to completion)
     for (int i = 0; i < prcs; i++) {
@@ -104,7 +102,7 @@ int main(){
     }
 
 
-    // ----- Member 4 :  Waiting Time Calculation & Averages -----  Faris
+    // ----- Member 4 :  Waiting Time Calculation & Averages -----  
 
     int waitingTime[10];        
 
@@ -122,7 +120,7 @@ int main(){
     double avgTurnaroundTime = totalTurnaroundTime/prcs; // average turnaround time across all processes
 
 
-    // ----- Member 5 : Output Formatting -----  Ahmad
+    // ----- Member 5 : Output Formatting -----  
 
     // cout << "\n=====  Result =====\n";
     // cout << "\nProcess\t\tBurst Time\tCompletion Time\t\tTurnaround Time\t\tWaiting Time\n";
