@@ -56,14 +56,17 @@ int main(){
 
     int burstTime[10], prcs, quantum;
     int arrivalTime = 0; // we are assuming all processes arrive at time 0 for simplicity
+    cout << "\n===== Round Robin Scheduling =====\n";
 
     do
     {
-        cout << "Enter number of processes (1-10): ";
+        cout << "\nEnter number of processes (1-10): ";
         cin >> prcs;
         if (prcs < 1 || prcs > 10)
             cout << "Invalid! Number of processes must be between 1 and 10.\n";
     } while (prcs < 1 || prcs > 10);
+
+    cout<<endl;
 
     for (int i = 0; i < prcs; i++)
     {
@@ -75,6 +78,8 @@ int main(){
                 cout << "Invalid! Burst time must be greater than 0.\n";
         } while (burstTime[i] <= 0);
     }
+
+    cout<<endl;
 
     // Get time quantum with validation
     do
@@ -157,19 +162,20 @@ int main(){
     
 
     cout << "\n===== Round Robin Scheduling Result =====\n";
-    cout << "\nProcess\tBurst Time\tCompletion Time\tTurnaround Time\tWaiting Time\n";
+    cout << "\nProcess\t\tBurst Time\tCompletion Time\t\tTurnaround Time\t\tWaiting Time\n";
 
 for (int i = 0; i < prcs; i++)
 {
-    cout << "P" << (i + 1) << "\t"
+    cout << "P" << (i + 1) << "\t\t"
          << burstTime[i] << "\t\t"
-         << completionTime[i] << "\t\t"
-         << turnaroundTime[i] << "\t\t"
+         << completionTime[i] << "\t\t\t"
+         << turnaroundTime[i] << "\t\t\t"
          << waitingTime[i] << "\n";
 }
 
 cout << "\nAverage Waiting Time: " << avgWaitTime << endl;
 cout << "Average Turnaround Time: " << avgTurnaroundTime << endl;
+cout<<endl;
 
     return 0;
 }
