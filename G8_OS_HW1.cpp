@@ -1,54 +1,18 @@
 // OS Homework 1 - Round Robin Scheduling
-// TODO
 
 
 //          DEADLINE : 25TH MARCH 2026
-/*  
-    Group 8: 
+/*
+    Group 8:
     - Member 1: Mohammed Abdul Haris - U23100877
     - Member 2: Hydyr Babamuradov - U22200809
     - Member 3: Muhammad Azhar - U23102421
-    - Member 4: [Name] - [ID]
-    - Member 5: [Name] - [ID]
+    - Member 4: FARIS MUNADHIL AHMED ALAGHA - U23104246
+    - Member 5: AKHMAD SAMIR MOSSAVI - U23102307
 */
- 
 
 #include <iostream>
 using namespace std;
-
-// ----- Member 1 : Input & Validation ----- Hydyr
-// void getInput(int burstTime[], int &n, int &quantum)
-// {
-//     // Get number of processes with validation
-//     do
-//     {
-//         cout << "Enter number of processes (1-10): ";
-//         cin >> n;
-//         if (n < 1 || n > 10)
-//             cout << "Invalid! Number of processes must be between 1 and 10.\n";
-//     } while (n < 1 || n > 10);
-
-//     // Get burst time for each process with validation
-//     for (int i = 0; i < n; i++)
-//     {
-//         do
-//         {
-//             cout << "Enter burst time for process P" << (i + 1) << ": ";
-//             cin >> burstTime[i];
-//             if (burstTime[i] <= 0)
-//                 cout << "Invalid! Burst time must be greater than 0.\n";
-//         } while (burstTime[i] <= 0);
-//     }
-
-//     // Get time quantum with validation
-//     do
-//     {
-//         cout << "Enter time quantum: ";
-//         cin >> quantum;
-//         if (quantum <= 0)
-//             cout << "Invalid! Time quantum must be greater than 0.\n";
-//     } while (quantum <= 0);
-// }
 
 int main(){
 
@@ -56,6 +20,7 @@ int main(){
 
     int burstTime[10], prcs, quantum;
     int arrivalTime = 0; // we are assuming all processes arrive at time 0 for simplicity
+
     cout << "\n===== Round Robin Scheduling =====\n";
 
     do
@@ -81,7 +46,6 @@ int main(){
 
     cout<<endl;
 
-    // Get time quantum with validation
     do
     {
         cout << "Enter time quantum: ";
@@ -90,10 +54,11 @@ int main(){
             cout << "Invalid! Time quantum must be greater than 0.\n";
     } while (quantum <= 0);
 
+
     // ----- Member 2 : Round Robin Logic -----  Mohammed Haris
 
     int remainingTime[10];  // remaining burst time per process
-    int completionTime[10]; // Azhar and Faris use this to calculate waiting and turnaround times
+    int completionTime[10]; 
     int currentTime = 0;    // current time on the CPU clock
     bool done = false;
 
@@ -129,53 +94,49 @@ int main(){
         }
     }
 
-    
-    /*.     FOR AZHAR AND FARIS -- FORMULA TO CALCULATE WAITING AND TURNAROUND TIMES.
-
-        turnaroundTime[i] = completionTime[i] - arrivalTime[i];
-        waitingTime[i]    = turnaroundTime[i] - burstTime[i]; using this formula only becuase of the assumption that all processes arrive at time 0.
-    */
 
     // ----- Member 3 :  Turnaround Time  -----  Azhar
+
     int turnaroundTime[10];
-    for (int i = 0; i < prcs; i++) 
-        {
-            turnaroundTime[i] = completionTime[i] - arrivalTime;
-        }
+    for (int i = 0; i < prcs; i++) {
+        turnaroundTime[i] = completionTime[i] - arrivalTime;
+    }
+
 
     // ----- Member 4 :  Waiting Time Calculation & Averages -----  Faris
+
     int waitingTime[10];
     double totalWaitTime = 0;
     double totalTurnaroundTime = 0;
 
-        for (int i = 0; i < prcs; i++) 
-        {
-            waitingTime[i] = turnaroundTime[i] - burstTime[i];
-            totalWaitTime += waitingTime[i];
-            totalTurnaroundTime += turnaroundTime[i];
-        }
+    for (int i = 0; i < prcs; i++) {
+        waitingTime[i] = turnaroundTime[i] - burstTime[i];
+        totalWaitTime += waitingTime[i];
+        totalTurnaroundTime += turnaroundTime[i];
+    }
 
     double avgWaitTime = totalWaitTime/prcs;
     double avgTurnaroundTime = totalTurnaroundTime/prcs;
 
+
     // ----- Member 5 : Output Formatting -----  Ahmad
-    
 
-    cout << "\n===== Round Robin Scheduling Result =====\n";
-    cout << "\nProcess\t\tBurst Time\tCompletion Time\t\tTurnaround Time\t\tWaiting Time\n";
+    cout << "\n=====  Result =====\n";
+    // cout << "\nProcess\t\tBurst Time\tCompletion Time\t\tTurnaround Time\t\tWaiting Time\n";
+    cout << "\nProcess\t\tBurst Time\tWaiting Time\tTurnaround Time\n";
 
-for (int i = 0; i < prcs; i++)
-{
-    cout << "P" << (i + 1) << "\t\t"
-         << burstTime[i] << "\t\t"
-         << completionTime[i] << "\t\t\t"
-         << turnaroundTime[i] << "\t\t\t"
-         << waitingTime[i] << "\n";
-}
+    for (int i = 0; i < prcs; i++)
+    {
+        cout << "P" << (i + 1) << "\t\t"
+             << burstTime[i] << "\t\t"
+             //  << completionTime[i] << "\t\t\t"
+             << waitingTime[i] << "\t\t"
+             << turnaroundTime[i] << "\n";
+    }
 
-cout << "\nAverage Waiting Time: " << avgWaitTime << endl;
-cout << "Average Turnaround Time: " << avgTurnaroundTime << endl;
-cout<<endl;
+    cout << "\nAverage Waiting Time: " << avgWaitTime << endl;
+    cout << "Average Turnaround Time: " << avgTurnaroundTime << endl;
+    cout<<endl;
 
     return 0;
 }
